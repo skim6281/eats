@@ -1,5 +1,7 @@
+require 'json'
+require 'http'
+
 class Restaurant
-  include HTTPParty
   CLIENT_ID = ENV['client_id']
   CLIENT_SECRET = ENV['client_secret']
   API_HOST = "https://api.yelp.com".freeze
@@ -20,7 +22,7 @@ class Restaurant
       grant_type: GRANT_TYPE
     }
 
-    response = HTPP.post(url, params: params)
+    response = HTTP.post(url, params: params)
     parsed = response.parse
     "#{parsed['token_type']} #{parsed['access_token']}"
   end
