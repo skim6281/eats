@@ -4,7 +4,9 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import Reducer from './reducer';
 import Root from './root';
-import {fetchRestaurants} from './actions';
+import { fetchRestaurants } from './actions';
+
+window.fetchRestaurants = fetchRestaurants;
 
 const configureStore = (preloadedState = {}) => (
   createStore(
