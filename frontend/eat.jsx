@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
+import { combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import Reducer from './reducer';
 import Root from './root';
 import { fetchRestaurants } from './actions';
 
-window.fetchRestaurants = fetchRestaurants;
-
 const configureStore = (preloadedState = {}) => (
   createStore(
-    Reducer,
+    combineReducers({ restaurants: Reducer }),
     preloadedState,
     applyMiddleware(thunk)
   )
