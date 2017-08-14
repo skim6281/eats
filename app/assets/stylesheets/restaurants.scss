@@ -1,6 +1,9 @@
 // Place all the styles related to the Restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .search {
   border: 1px solid #5F5F5F;
@@ -52,9 +55,22 @@ h1 {
 }
 
 .name {
-  font-size: 36px;
+  font-size: 32px;
+  font-weight: 500;
 }
 
 .restaurant-col {
   font-size: 24px;
+}
+
+.sort-options {
+  margin-bottom: 30px;
+}
+
+.sort-button {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 5px;
+  background-color: #F5F5F5;
 }

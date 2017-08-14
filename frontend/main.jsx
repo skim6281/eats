@@ -15,10 +15,10 @@ class Main extends React.Component {
   renderSortOptions() {
     if(this.props.restaurants.length > 1) {
       return (
-        <div>
+        <div className="sort-options">
           <span>Sort by: </span>
-          <button onClick={this.props.sortByRating}>Rating</button>
-          <button onClick={this.props.sortByPrice}>Price</button>
+          <button className="sort-button" onClick={this.props.sortByRating}>Rating</button>
+          <button className="sort-button" onClick={this.props.sortByPrice}>Price</button>
         </div>
       )
     }
@@ -28,6 +28,7 @@ class Main extends React.Component {
     if(this.props.restaurants.length > 0) {
       return(
         <section className="list">
+          {this.renderSortOptions()}
           <heading className="flex btwn">
             <div className="restaurant-col">
               Restaurant
@@ -94,7 +95,6 @@ class Main extends React.Component {
             <img src={window.images.magnifyingGlass}/>
           </button>
         </form>
-        {this.renderSortOptions()}
         {this.renderList()}
       </div>
     )
